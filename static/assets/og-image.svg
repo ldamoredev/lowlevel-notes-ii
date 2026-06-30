@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0H0V34" fill="none" stroke="#5ec8e0" stroke-opacity="0.10" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="glow" cx="14%" cy="-8%" r="65%">
+      <stop offset="0%" stop-color="#5ec8e0" stop-opacity="0.16"/>
+      <stop offset="60%" stop-color="#5ec8e0" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#0c0d10"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <path d="M70 130V70h60" fill="none" stroke="#5ec8e0" stroke-width="3" stroke-linecap="round"/>
+  <path d="M1130 500v60h-60" fill="none" stroke="#5ec8e0" stroke-width="3" stroke-linecap="round"/>
+
+  <text x="80" y="270" font-family="JetBrains Mono, Consolas, monospace" font-size="20" letter-spacing="2" fill="#5ec8e0" opacity="0.85">SCHEMATIC.console / parte-2</text>
+  <text x="78" y="350" font-family="Inter, system-ui, sans-serif" font-size="74" font-weight="650" fill="#ece6db">Low-Level Atlas <tspan fill="#5ec8e0">II</tspan></text>
+  <text x="80" y="410" font-family="Inter, system-ui, sans-serif" font-size="27" fill="#968d7d">Build real systems in C — a shell, an HTTP server, a database engine.</text>
+
+  <g transform="translate(80,460)">
+    <circle cx="0" cy="0" r="7" fill="none" stroke="#5ec8e0" stroke-width="2.4"/>
+    <circle cx="120" cy="14" r="7" fill="none" stroke="#7fe0a8" stroke-width="2.4"/>
+    <circle cx="60" cy="60" r="7" fill="none" stroke="#5ec8e0" stroke-width="2.4"/>
+    <path d="M7 3 113 13M5 6 55 56M65 53 115 19" stroke="#41525c" stroke-width="1.6"/>
+  </g>
+</svg>
