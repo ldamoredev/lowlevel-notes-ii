@@ -742,7 +742,7 @@ def render_sidebar(tree: dict[str, dict[str, list[Note]]], current: Note | None)
     lines = ['<nav class="sidebar" aria-label="Primary navigation">']
     lines.append(
         '<div class="sidebar-head">'
-        f'<a class="sidebar-brand" href="{html.escape(home_href)}">{icon_svg("cpu", "brand-icon")}'
+        f'<a class="sidebar-brand" href="{html.escape(home_href)}">{icon_svg("nodes", "brand-icon")}'
         f'<span class="brand-text"><span class="brand-title">{html.escape(SITE_NAME)}</span><span class="brand-sub">{html.escape(t("brand_sub"))}</span></span></a>'
         f'<button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="{html.escape(t("theme_toggle"))}">'
         f'<span class="label-light">{icon_svg("sun")} {html.escape(t("light_mode"))}</span>'
@@ -1220,7 +1220,7 @@ def build_home(tree: dict[str, dict[str, list[Note]]], notes: list[Note]) -> str
     playbook_count = branch_note_count(tree, "craftsmanship-low-level")
     lines: list[str] = []
     lines.append('<section class="home-hero">')
-    lines.append('<div class="hero-crumb"><span>model.console</span><span>/</span><span>personal-atlas</span></div>')
+    lines.append('<div class="hero-crumb"><span>schematic.console</span><span>/</span><span>build-queue</span></div>')
     lines.append(f'<h1>{html.escape(t("home_title"))}</h1>')
     lines.append(f'<p class="hero-subtitle">{html.escape(t("home_subtitle"))}</p>')
     lines.append(f'<p class="lede">{html.escape(t("home_lede"))}</p>')
