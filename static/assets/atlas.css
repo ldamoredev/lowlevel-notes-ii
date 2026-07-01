@@ -1,46 +1,50 @@
 /* Low-Level Atlas II — "Blueprint & Graphite" identity.
    Sequel to Atlas I's "Copper & Graphite": same dark graphite surfaces and the
-   same named-variable system, but the warm copper accent is replaced by a cool
-   blueprint cyan (the plan you draft, not the metal you forged) with a terminal
-   green secondary. The atlas-I copper survives as a single deliberate cameo: the
-   "orange" slot keeps atlas I's exact accent hex in both themes, used only on
-   the mini-git branch card as a quiet wink back to the first atlas.
-   Named color vars keep their original keys so .accent-<name> classes stay valid;
-   the hues are remapped onto the blueprint → graphite → terminal-green spectrum. */
+   same named-variable system, but the warm copper accent is replaced by a
+   terminal/circuit-board green (the plan you draft and the board you etch, not
+   the metal you forged) with a steel-blue secondary. Deliberately NOT cyan or
+   indigo — that hue family belongs to the sibling AI Atlas — and not a plain
+   line grid either, since that's the AI Atlas's background pattern too; this
+   atlas uses a grid-plus-via-pad pattern (PCB traces, not graph paper). The
+   atlas-I copper survives as a single deliberate cameo: the "orange" slot keeps
+   atlas I's exact accent hex in both themes, used only on the mini-git branch
+   card and the "Atlas I →" link as a quiet wink back to the first atlas.
+   Named color vars keep their original keys so .accent-<name> classes stay
+   valid; the hues are remapped onto the terminal-green → graphite spectrum. */
 :root {
   color-scheme: light dark;
-  --bg: #eef3f6;
-  --bg-2: #e3ebf0;
-  --panel: #fbfdfe;
-  --panel-2: #f3f8fa;
-  --panel-3: #eaf1f4;
-  --border: #d3dee5;
-  --border-2: #dee7ec;
-  --border-strong: #b7c7d0;
-  --fg: #131a1f;
-  --fg-soft: #2c3a42;
-  --muted: #5b6d77;
-  --muted-2: #76858d;
-  --accent: #1f7a9e;
-  --accent-2: #1f8f6b;
-  --accent-3: #186a8a;
-  --accent-soft: rgba(31, 122, 158, .10);
-  --accent-line: rgba(31, 122, 158, .24);
-  --cyan: #1f7a9e;
-  --sky: #2f7d9c;
-  --blue: #3f63a6;
-  --indigo: #5650a0;
-  --violet: #7551b0;
+  --bg: #eef3ee;
+  --bg-2: #e3ebe3;
+  --panel: #fbfdfb;
+  --panel-2: #f3f8f3;
+  --panel-3: #eaf1ea;
+  --border: #d3e0d3;
+  --border-2: #dee7de;
+  --border-strong: #b7d0b9;
+  --fg: #13191a;
+  --fg-soft: #2c3a2e;
+  --muted: #5b7761;
+  --muted-2: #76857b;
+  --accent: #1f8a3a;
+  --accent-2: #2f6ea6;
+  --accent-3: #186a2f;
+  --accent-soft: rgba(31, 138, 58, .10);
+  --accent-line: rgba(31, 138, 58, .24);
+  --cyan: #1f7a76;
+  --sky: #2f6ea6;
+  --blue: #3f5ea6;
+  --indigo: #5f5aa0;
+  --violet: #7551a8;
   --fuchsia: #a8458a;
-  --teal: #1f8f7a;
-  --emerald: #1f8f6b;
+  --teal: #1f8a72;
+  --emerald: #1f8a3a;
   --amber: #a8731f;
   --orange: #b5601f;
   --rose: #c2564a;
   --red: #b03a25;
-  --slate: #5b6d77;
-  --shadow-card: 0 1px 2px rgba(15, 30, 38, .07), 0 10px 24px rgba(15, 30, 38, .08);
-  --shadow-hover: 0 6px 18px rgba(15, 30, 38, .14);
+  --slate: #5b6d5e;
+  --shadow-card: 0 1px 2px rgba(15, 30, 20, .07), 0 10px 24px rgba(15, 30, 20, .08);
+  --shadow-hover: 0 6px 18px rgba(15, 30, 20, .14);
   --topbar-h: 62px;
   --sidebar-w: 272px;
   --rightrail-w: 250px;
@@ -62,24 +66,24 @@ html[data-theme="dark"] {
   --fg-soft: #cfc7b8;
   --muted: #968d7d;
   --muted-2: #756d5f;
-  --accent: #5ec8e0;
-  --accent-2: #7fe0a8;
-  --accent-3: #8fd9ec;
-  --accent-soft: rgba(94, 200, 224, .12);
-  --accent-line: rgba(94, 200, 224, .28);
-  --cyan: #5ec8e0;
-  --sky: #7ab8d9;
-  --blue: #6e9fd6;
-  --indigo: #8d93d6;
-  --violet: #a98fe0;
-  --fuchsia: #e08ab8;
-  --teal: #4fd1b0;
-  --emerald: #7fe0a8;
+  --accent: #5fd76a;
+  --accent-2: #6ea8d8;
+  --accent-3: #8bea8b;
+  --accent-soft: rgba(95, 215, 106, .12);
+  --accent-line: rgba(95, 215, 106, .28);
+  --cyan: #4fb8ae;
+  --sky: #6ea8d8;
+  --blue: #5a86c2;
+  --indigo: #8480c9;
+  --violet: #9b7fd1;
+  --fuchsia: #d17fb0;
+  --teal: #4fbf9e;
+  --emerald: #5fd76a;
   --amber: #e6b36a;
   --orange: #e8a06a;
-  --rose: #ef9a8e;
-  --red: #ef8a6a;
-  --slate: #9aa0ad;
+  --rose: #d9899a;
+  --red: #d9705a;
+  --slate: #8a9d93;
   --shadow-card: 0 1px 1px rgba(0, 0, 0, .30), 0 12px 32px rgba(0, 0, 0, .26);
   --shadow-hover: 0 10px 32px rgba(0, 0, 0, .34);
 }
@@ -90,11 +94,14 @@ html { scroll-behavior: smooth; scroll-padding-top: calc(var(--topbar-h) + 18px)
 body {
   min-height: 100vh;
   color: var(--fg);
-  /* Blueprint / schematic line grid — distinctive "the machine you build"
-     identity (continuous drafting-paper lines, not atlas I's perfboard dots). */
+  /* PCB trace grid: faint lines PLUS via-pad dots at every intersection —
+     distinct from both siblings (atlas I is dots-only "perfboard", the AI
+     Atlas is lines-only graph paper). Reads as "circuit board", on theme for
+     a "build real systems" atlas. */
   background:
-    linear-gradient(var(--border) 1px, transparent 1px) 0 0/28px 28px,
-    linear-gradient(90deg, var(--border) 1px, transparent 1px) 0 0/28px 28px,
+    radial-gradient(circle at center, var(--border-strong) 1.1px, transparent 1.7px) 0 0/32px 32px,
+    linear-gradient(var(--border) 1px, transparent 1px) 0 0/32px 32px,
+    linear-gradient(90deg, var(--border) 1px, transparent 1px) 0 0/32px 32px,
     var(--bg);
   font-family: var(--font-sans);
   font-size: 14px;
@@ -103,11 +110,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 html[data-theme="dark"] body {
-  /* Blueprint grid on graphite + a faint cyan drafting-lamp glow up top. */
+  /* PCB trace grid on graphite + a faint terminal-green glow up top. */
   background:
-    linear-gradient(rgba(94, 200, 224, .065) 1px, transparent 1px) 0 0/28px 28px,
-    linear-gradient(90deg, rgba(94, 200, 224, .065) 1px, transparent 1px) 0 0/28px 28px,
-    radial-gradient(1100px 560px at 14% -8%, rgba(94, 200, 224, .07), transparent 60%),
+    radial-gradient(circle at center, rgba(95, 215, 106, .16) 1.1px, transparent 1.7px) 0 0/32px 32px,
+    linear-gradient(rgba(95, 215, 106, .05) 1px, transparent 1px) 0 0/32px 32px,
+    linear-gradient(90deg, rgba(95, 215, 106, .05) 1px, transparent 1px) 0 0/32px 32px,
+    radial-gradient(1100px 560px at 14% -8%, rgba(95, 215, 106, .07), transparent 60%),
     var(--bg);
 }
 
@@ -133,7 +141,7 @@ svg { width: 18px; height: 18px; flex-shrink: 0; }
   padding: 9px 15px;
   border-radius: var(--radius);
   background: var(--accent);
-  color: #1b1712;
+  color: var(--bg);
   font-weight: 800;
   transform: translateY(-160%);
   transition: transform .15s ease;
@@ -881,7 +889,7 @@ html[data-theme="dark"] .topbar { background: rgba(22, 24, 29, .92); }
   padding: 24px;
   margin-bottom: 32px;
   border: 1px solid var(--border);
-  border-left: 3px solid var(--cyan);
+  border-left: 3px solid var(--emerald);
   border-radius: var(--radius);
   background: var(--panel);
   box-shadow: var(--shadow-card);
@@ -905,7 +913,7 @@ html[data-theme="dark"] .topbar { background: rgba(22, 24, 29, .92); }
   align-items: center;
   gap: 8px;
   margin-bottom: 8px;
-  color: var(--cyan);
+  color: var(--emerald);
 }
 .spine-step-head svg { width: 18px; height: 18px; }
 .spine-version {
@@ -920,10 +928,10 @@ html[data-theme="dark"] .topbar { background: rgba(22, 24, 29, .92); }
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  color: var(--cyan);
+  color: var(--emerald);
   font-weight: 800;
 }
-.spine-cta:hover { color: var(--accent); text-decoration: none; }
+.spine-cta:hover { color: var(--accent-3); text-decoration: none; }
 
 .home-footer {
   display: flex;

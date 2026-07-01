@@ -34,7 +34,7 @@ SITE_SHORT_NAME = "Low-Level Atlas II"
 SITE_AUTHOR = "Nicolas Bottarini"
 SITE_URL = os.environ.get("SITE_URL", "https://ldamoredev.github.io/lowlevel-notes-ii").rstrip("/")
 GITHUB_URL = os.environ.get("GITHUB_URL", "https://github.com/ldamoredev/lowlevel-notes-ii")
-THEME_COLOR = "#5ec8e0"
+THEME_COLOR = "#5fd76a"
 
 # Atlas I — the prerequisite. Same author, separate repo/site; linked, never duplicated.
 ATLAS_I_SITE_URL = "https://ldamoredev.github.io/lowlevel-notes"
@@ -120,7 +120,7 @@ PHASE_KEYS = tuple(p["key"] for p in PHASES)
 # (root slug, icon, accent)
 ORIENTATION_ENTRY_CARDS = (
     ("start-here", "compass", "sky"),
-    ("must-know", "spark", "emerald"),
+    ("must-know", "spark", "cyan"),
     ("index", "nodes", "slate"),
 )
 
@@ -136,7 +136,7 @@ BRANCHES = {
         "label": "malloc from Scratch",
         "group": "Warmup",
         "summary": "A real malloc/free/realloc: free lists, coalescing, sbrk vs mmap, alignment, fragmentation — measured against glibc's allocator.",
-        "accent": "emerald",
+        "accent": "teal",
         "icon": "memory",
     },
     "regex-engine-from-scratch": {
@@ -171,7 +171,7 @@ BRANCHES = {
         "label": "KV Store & Durability",
         "group": "Engine",
         "summary": "First half of the database engine: a persistent key-value store on a copy-on-write B-Tree, fsync durability, write-ahead log, crash recovery, free-space management.",
-        "accent": "cyan",
+        "accent": "emerald",
         "icon": "disk",
     },
     "relational-layer-and-query-engine": {
@@ -742,7 +742,7 @@ def render_sidebar(tree: dict[str, dict[str, list[Note]]], current: Note | None)
     lines = ['<nav class="sidebar" aria-label="Primary navigation">']
     lines.append(
         '<div class="sidebar-head">'
-        f'<a class="sidebar-brand" href="{html.escape(home_href)}">{icon_svg("nodes", "brand-icon")}'
+        f'<a class="sidebar-brand" href="{html.escape(home_href)}">{icon_svg("layout", "brand-icon")}'
         f'<span class="brand-text"><span class="brand-title">{html.escape(SITE_NAME)}</span><span class="brand-sub">{html.escape(t("brand_sub"))}</span></span></a>'
         f'<button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="{html.escape(t("theme_toggle"))}">'
         f'<span class="label-light">{icon_svg("sun")} {html.escape(t("light_mode"))}</span>'
