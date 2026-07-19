@@ -290,6 +290,20 @@ UI_STRINGS = {
         "home_lede": "The practical continuation of Low-Level Atlas: nine real systems built from scratch in C — a shell, a malloc, a regex engine, a Git clone, an HTTP server, and a database engine with a B-Tree, a WAL, and a SQL layer. No frameworks, no shortcuts. Assumes you already did Atlas I.",
         "home_explore": "Explore branches",
         "home_playbooks": "Craftsmanship II playbooks",
+        "scheme_aria": "Project build map: warm-up builds feed data and networked systems; concurrency develops alongside them; the results converge into a database engine from B-Tree storage through WAL durability, relational tables, and SQL transactions.",
+        "scheme_caption": "PROJECT BUILD MAP",
+        "scheme_queue": "build queue #02",
+        "scheme_warmup": "warm-up builds",
+        "scheme_data": "data + serialization",
+        "scheme_networked": "networked systems",
+        "scheme_concurrency": "concurrency in practice",
+        "scheme_pressure": "system pressure",
+        "scheme_engine": "database engine",
+        "scheme_storage": "persistent KV / B-Tree",
+        "scheme_durability": "WAL + recovery",
+        "scheme_relational": "tables + indexes",
+        "scheme_sql": "SQL + transactions",
+        "scheme_craft": "test · fuzz · profile · repeat",
         "stat_notes": "Notes",
         "stat_branches": "Branches",
         "stat_playbooks": "Playbooks",
@@ -375,6 +389,20 @@ UI_STRINGS = {
         "home_lede": "La continuación práctica del Low-Level Atlas: nueve sistemas reales construidos desde cero en C — un shell, un malloc, un motor de regex, un clon de Git, un servidor HTTP y un motor de base de datos con B-Tree, WAL y capa SQL. Sin frameworks, sin atajos. Asume que ya hiciste el atlas I.",
         "home_explore": "Explorar ramas",
         "home_playbooks": "Playbooks de craftsmanship II",
+        "scheme_aria": "Mapa de construcción de proyectos: los builds de entrada alimentan los sistemas de datos y red; la concurrencia se desarrolla en paralelo; todo converge en un motor de base de datos, desde el almacenamiento B-Tree hasta WAL, tablas y transacciones SQL.",
+        "scheme_caption": "MAPA DE CONSTRUCCIÓN",
+        "scheme_queue": "cola de build #02",
+        "scheme_warmup": "builds de entrada",
+        "scheme_data": "datos + serialización",
+        "scheme_networked": "sistemas en red",
+        "scheme_concurrency": "concurrencia en práctica",
+        "scheme_pressure": "presión de sistema",
+        "scheme_engine": "motor de base de datos",
+        "scheme_storage": "KV persistente / B-Tree",
+        "scheme_durability": "WAL + recuperación",
+        "scheme_relational": "tablas + índices",
+        "scheme_sql": "SQL + transacciones",
+        "scheme_craft": "test · fuzz · perfilá · repetí",
         "stat_notes": "Notas",
         "stat_branches": "Ramas",
         "stat_playbooks": "Playbooks",
@@ -1219,7 +1247,8 @@ def build_home(tree: dict[str, dict[str, list[Note]]], notes: list[Note]) -> str
     registry_notes = [n for n in section_root if n.slug.startswith("reference-registry")]
     playbook_count = branch_note_count(tree, "craftsmanship-low-level")
     lines: list[str] = []
-    lines.append('<section class="home-hero">')
+    lines.append('<section class="home-hero build-hero">')
+    lines.append('<div class="hero-copy">')
     lines.append('<div class="hero-crumb"><span>schematic.console</span><span>/</span><span>build-queue</span></div>')
     lines.append(f'<h1>{html.escape(t("home_title"))}</h1>')
     lines.append(f'<p class="hero-subtitle">{html.escape(t("home_subtitle"))}</p>')
@@ -1229,7 +1258,38 @@ def build_home(tree: dict[str, dict[str, list[Note]]], notes: list[Note]) -> str
     lines.append(f'<a class="btn btn-ghost" href="{SECTION}/craftsmanship-low-level-ii/index.html">{icon_svg("playbook")}{html.escape(t("home_playbooks"))}</a>')
     atlas_i_href = f"{ATLAS_I_SITE_URL}/{CURRENT_LOCALE}/index.html"
     lines.append(f'<a class="btn btn-atlas-i" href="{html.escape(atlas_i_href)}" target="_blank" rel="noopener">{icon_svg("book")}{html.escape(t("continuity_cta"))}</a>')
-    lines.append('</div><div class="hero-stats">')
+    lines.append('</div></div>')
+    diagram_branches = (
+        ("shell-from-scratch", "malloc-from-scratch", "regex-engine-from-scratch"),
+        ("mini-git",),
+        ("http-server-from-scratch",),
+        ("concurrency-in-practice",),
+        ("kv-store-and-durability", "relational-layer-and-query-engine"),
+    )
+    diagram_labels = [
+        [branch_label(slug) for slug in row]
+        for row in diagram_branches
+    ]
+    lines.append(
+        f'<div class="project-build-map" role="img" aria-label="{html.escape(t("scheme_aria"))}">'
+        f'<div class="pbm-caption"><span>{html.escape(t("scheme_caption"))}</span><b>{html.escape(t("scheme_queue"))}</b></div>'
+        '<div class="pbm-line pbm-line-top"><span></span></div>'
+        f'<div class="pbm-stage pbm-warmup"><small>01 · {html.escape(t("scheme_warmup"))}</small><div class="pbm-chip-row">'
+        f'<b>{html.escape(diagram_labels[0][0])}</b><b>{html.escape(diagram_labels[0][1])}</b><b>{html.escape(diagram_labels[0][2])}</b></div></div>'
+        '<div class="pbm-arrow pbm-arrow-one">→</div>'
+        f'<div class="pbm-stage pbm-data"><small>02 · {html.escape(t("scheme_data"))}</small><strong>{html.escape(diagram_labels[1][0])}</strong></div>'
+        '<div class="pbm-arrow pbm-arrow-two">→</div>'
+        f'<div class="pbm-stage pbm-network"><small>03 · {html.escape(t("scheme_networked"))}</small><strong>{html.escape(diagram_labels[2][0])}</strong></div>'
+        f'<div class="pbm-stage pbm-concurrency"><small>↕ · {html.escape(t("scheme_concurrency"))}</small><strong>{html.escape(diagram_labels[3][0])}</strong></div>'
+        f'<div class="pbm-converge"><span>04</span><i>↘</i><b>{html.escape(t("scheme_pressure"))}</b><i>↙</i></div>'
+        '<div class="pbm-engine">'
+        f'<div class="pbm-engine-label"><span>05 · {html.escape(t("scheme_engine"))}</span><b>{html.escape(diagram_labels[4][0])} → {html.escape(diagram_labels[4][1])}</b></div>'
+        f'<div class="pbm-engine-steps"><span>{html.escape(t("scheme_storage"))}</span><i>→</i><span>{html.escape(t("scheme_durability"))}</span><i>→</i><span>{html.escape(t("scheme_relational"))}</span><i>→</i><span>{html.escape(t("scheme_sql"))}</span></div>'
+        '</div>'
+        f'<div class="pbm-craft"><span>∞</span><b>{html.escape(t("scheme_craft"))}</b></div>'
+        '</div>'
+    )
+    lines.append('<div class="hero-stats">')
     for value, label, icon in (
         (note_count, t("stat_notes"), "file"),
         (len(BRANCHES), t("stat_branches"), "nodes"),
